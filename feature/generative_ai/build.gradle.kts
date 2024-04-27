@@ -44,6 +44,12 @@ dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:ui"))
 
+    // generative_ai
+    implementation(libs.google.generative.ai)
+
+    // markdown
+    implementation(libs.markdown.text)
+
     // compose
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.ui)
