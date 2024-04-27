@@ -5,12 +5,12 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.bayutb.generative_ai.presentation.GenerativeAIScreen
-import com.bayutb.generative_ai.presentation.GenerativeAIDestinations
+import com.bayutb.generative_ai.presentation.screen.GenerativeAIScreen
+import com.bayutb.generative_ai.presentation.screen.GenerativeAIDestinations
 
 @Composable
 fun HomeNavHost(
-    onNavigationRequested : (GenerativeAIDestinations) -> Unit
+    onNavigationRequested : (String) -> Unit
 ) {
     val navController = rememberNavController()
 
@@ -23,7 +23,7 @@ fun HomeNavHost(
 }
 
 private fun NavGraphBuilder.addHomeNavGraph(
-    onNavigationRequested: (GenerativeAIDestinations) -> Unit
+    onNavigationRequested: (String) -> Unit
 ) {
     composable(GenerativeAIDestinations.HOME) {
         GenerativeAIScreen(

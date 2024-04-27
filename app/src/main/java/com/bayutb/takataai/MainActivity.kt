@@ -17,7 +17,9 @@ import androidx.compose.ui.unit.dp
 import com.bayutb.navigation.home.HomeNavHost
 import com.bayutb.takataai.ui.theme.TakataAITheme
 import com.bayutb.ui.component.input.MainChatInput
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +27,7 @@ class MainActivity : ComponentActivity() {
             TakataAITheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize().padding(16.dp),
+                    modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     HomeNavHost(

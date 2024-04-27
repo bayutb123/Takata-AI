@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.daggerHilt)
     kotlin("kapt") version libs.versions.kapt
 }
 
@@ -56,6 +57,10 @@ dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:ui"))
     implementation(project(":core:navigation"))
+
+    // DI
+    implementation(libs.dagger.hilt)
+    ksp(libs.dagger.hilt.compiler)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

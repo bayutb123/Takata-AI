@@ -23,8 +23,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
 
-        val geminiUrlWithApiKey = localProperties.getProperty("GEMINI_URL_WITH_API_KEY")
-        buildConfigField("String", "GEMINI_URL_WITH_API_KEY", "\"$geminiUrlWithApiKey\"")
+        val geminiUrl = localProperties.getProperty("GEMINI_URL")
+        val apiKey = localProperties.getProperty("GEMINI_API_KEY")
+        buildConfigField("String", "GEMINI_URL", "\"$geminiUrl\"")
+        buildConfigField("String", "GEMINI_API_KEY", "\"$apiKey\"")
     }
 
     buildTypes {

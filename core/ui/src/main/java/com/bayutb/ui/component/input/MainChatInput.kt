@@ -36,6 +36,7 @@ fun MainChatInput(
                 Icon(imageVector = Icons.Default.Send, contentDescription = "Send")
             }
         },
+        maxLines = 3,
         modifier = modifier
     )
 }
