@@ -51,9 +51,9 @@ fun GenerativeAIScreen(
                 Text(text = state)
             }
             MainChatInput(
-                onSendClick = {
+                onSendClick = { prompt ->
                     scope.launch {
-                        generativeAIViewModel.generate()
+                        generativeAIViewModel.generateWithText(prompt)
                     }
                 }, modifier = Modifier
                     .fillMaxWidth()

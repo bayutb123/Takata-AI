@@ -32,7 +32,7 @@ fun MainChatInput(
             IconButton(onClick = {
                 onSendClick(message)
                 message = ""
-            }) {
+            }, enabled = message.isNotBlank()) {
                 Icon(imageVector = Icons.Default.Send, contentDescription = "Send")
             }
         },

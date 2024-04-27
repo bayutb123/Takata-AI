@@ -7,7 +7,7 @@ import javax.inject.Inject
 class GenerativeAIUseCase @Inject constructor(
     private val generativeAIRepository: GenerativeAIRepository
 ) {
-    suspend fun generate(): GenerateWithTextResponse {
-        return generativeAIRepository.generate()
+    suspend fun generateWithText(prompt: String): GenerateWithTextResponse {
+        return generativeAIRepository.generate(prompt)
     }
 }

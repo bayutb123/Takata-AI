@@ -12,7 +12,7 @@ import javax.inject.Inject
 class GenerativeAIDataSource @Inject constructor(
     private val generativeAIService: GenerativeAIService
 ) : GenerativeAIRepository {
-    override suspend fun generate(): GenerateWithTextResponse {
+    override suspend fun generate(prompt: String): GenerateWithTextResponse {
         return try {
             generativeAIService.generate(
                 apiKey = BuildConfig.GEMINI_API_KEY,
@@ -21,7 +21,7 @@ class GenerativeAIDataSource @Inject constructor(
                         Content(
                             parts = listOf(
                                 Part(
-                                    text = "Hi, I am Bayu. I am a software engineer. Write a story about me."
+                                    text = prompt
                                 )
                             )
                         )

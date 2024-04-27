@@ -1,6 +1,5 @@
 package com.bayutb.generative_ai.presentation.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bayutb.generative_ai.domain.usecase.GenerativeAIUseCase
@@ -17,11 +16,11 @@ class GenerativeAIViewModel @Inject constructor(
 ) : ViewModel() {
     private val _result: MutableStateFlow<String> = MutableStateFlow("")
     val result: StateFlow<String> = _result.asStateFlow()
-    suspend fun generate() {
+    suspend fun generateWithText(prompt: String) {
         _result.value = "Generating..."
         viewModelScope.launch {
             try {
-                val response = generativeAIUseCase.generate()
+                val response = generativeAIUseCase.generateWithText(prompt)
                 if (response.candidates.isNotEmpty()) {
                     _result.value = response.candidates[0].content.parts[0].text
                 } else {
