@@ -57,7 +57,7 @@ fun GenerativeAIScreen(
 ) {
     val scope = rememberCoroutineScope()
     val isLoading by generativeAIViewModel.resultIsLoading.collectAsState()
-    val chatState by generativeAIViewModel.chatHistory.collectAsState()
+    val chatState by generativeAIViewModel.chatHistoryForUi.collectAsState()
     val scrollState = rememberScrollState()
     var bottomSheetVisible by remember { mutableStateOf(false) }
     var geminiVersion by remember { mutableStateOf("gemini-1.0-pro") }
